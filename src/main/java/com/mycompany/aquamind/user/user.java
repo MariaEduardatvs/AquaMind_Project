@@ -34,7 +34,5 @@ public class user {
         return email;
     }
 
-    public static user loadUser(String username) {
-// return user data
-    }
+
 }
