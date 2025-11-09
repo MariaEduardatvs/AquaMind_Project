@@ -8,6 +8,14 @@ package com.mycompany.aquamind.EducationalAndQuiz;
  *
  * @author User
  */
-public class EducationalContent {
+public abstract class EducationalContent {
+    protected String title; 
+    protected String text; 
+
+    public EducationalContent(String title, String text) {
+        this.title = title;
+        this.text = text;
+    }
     
+   public abstract void displayContent(); 
 }
