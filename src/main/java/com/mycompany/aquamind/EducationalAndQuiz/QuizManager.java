@@ -6,8 +6,13 @@ package com.mycompany.aquamind.EducationalAndQuiz;
 
 /**
  *
- * @author User
+ * @author Maria Eduarda Tavares
+ * manages everything in the educational and quiz section.
+ * Stores all EducationalContent objects in a list.
+ * Displays all content (showAllContent()).
+ * Starts the quiz (startQuiz()).
+ * 
  */
 public class QuizManager {
-    
+   
 }

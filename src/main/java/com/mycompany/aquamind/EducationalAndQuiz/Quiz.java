@@ -6,7 +6,12 @@ package com.mycompany.aquamind.EducationalAndQuiz;
 
 /**
  *
- * @author User
+ * @author Maria Eduarda Tavares
+ * Holds the quiz questions and answers, checks the user’s responses, and calculates a score.
+ * Stores lists of questions and answers (ArrayList<String>).
+ * Uses startQuiz() to ask each question.
+ * Compares user input to correct answers.
+ * Displays the final score.
  */
 public class Quiz {
     

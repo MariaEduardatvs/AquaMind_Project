@@ -6,8 +6,24 @@ package com.mycompany.aquamind.EducationalAndQuiz;
 
 /**
  *
- * @author User
+ * @author Maria Eduarda Tavares
+ * Represents a short fact about water.
  */
-public class Facts {
+public class Facts extends EducationalContent {
+    private final String source; 
+
+    public Facts(String source, String title, String text) {
+        super(title, text);
+        this.source = source;
+    }
     
+    @Override
+    public void displayContent(){
+    System.out.println("Fact");
+    System.out.println("Title: " + title);
+    System.out.println("Source: " + source);
+    System.out.println("Text: " + text);
+    System.out.println();
+    
+    }
 }

@@ -6,10 +6,12 @@ package com.mycompany.aquamind.EducationalAndQuiz;
 
 /**
  *
- * @author User
+ * @author Maria Eduarda Tavares
+ * Represents a article about water conservation.
+ * 
  */
 public class Articles extends EducationalContent {
-    private String author; 
+    private final String author; 
 
     public Articles(String author, String title, String text) {
         super(title, text);

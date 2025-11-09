@@ -6,7 +6,10 @@ package com.mycompany.aquamind.EducationalAndQuiz;
 
 /**
  *
- * @author User
+ * @author Maria Eduarda Tavares
+ * Acts as a base for all types of educational content.
+ * title and text attributes.
+ * Abstract method displayContent() will be implemented by subclasses.
  */
 public abstract class EducationalContent {
     protected String title; 
