@@ -5,6 +5,7 @@
     <artifactId>AquaMind</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+<<<<<<< HEAD
     <repositories>
         <repository>
             <id>unknown-jars-temp-repo</id>
@@ -17,6 +18,13 @@
             <groupId>unknown.binary</groupId>
             <artifactId>AbsoluteLayout</artifactId>
             <version>SNAPSHOT</version>
+=======
+    <dependencies>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE270</version>
+>>>>>>> 79f0ea596fefe22ffa9035e072ba5ce478a66a4d
         </dependency>
     </dependencies>
     <properties>
