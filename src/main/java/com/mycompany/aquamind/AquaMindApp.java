@@ -11,6 +11,21 @@ package com.mycompany.aquamind;
 public class AquaMindApp {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }
