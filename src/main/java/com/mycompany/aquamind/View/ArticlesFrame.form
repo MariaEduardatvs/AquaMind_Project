@@ -89,16 +89,27 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="25" max="32767" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="360" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="181" pref="181" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="148" max="32767" attributes="0"/>
               <Component id="btnClose" min="-2" pref="66" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jScrollPane2" pref="360" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="jLabel1" alignment="1" min="-2" pref="347" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" pref="230" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -110,9 +121,15 @@
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnClose" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="431" max="-2" attributes="0"/>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="293" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <Component id="jScrollPane4" pref="294" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -132,7 +149,7 @@
             <Property name="columns" type="int" value="20"/>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value=" Title: Unsafe water, sanitation and hygiene: a persistent health burden&#xa;                         &#xa;                         Author: Bruce Gordon&#xa;                         &#xa;                         Text: World Health Organization, 2023 highlights the global challenges related&#xa;                         to access to safe water and sanitation. According to the study, around 2.2 billion &#xa;                         people lack safely managed drinking water, and 3.5 billion people lack safely managed &#xa;                         sanitation services. These conditions contribute significantly to diseases such as diarrhea,&#xa;                         respiratory infections, and neglected tropical diseases. The authors emphasize that progress &#xa;                         towards universal access to safe water and sanitation is too slow to meet the 2030 Sustainable Development Goals, &#xa;                         stressing the urgent need for investment and policy action to protect public health.&#xa;                         &#xa;                         Title: Water Supply, Sanitation, and Hygiene&#xa;                         Author: Guy Hutton and Claire Chase&#xa;                         Text: published in Injury Prevention and Environmental Health (World Bank, 2017), provides&#xa;                         a comprehensive overview of global access to water, sanitation, and hygiene (WASH)&#xa;                         services. It discusses how improved WASH systems are essential for reducing disease,&#xa;                         enhancing quality of life, and promoting sustainable development. The authors explain &#xa;                         the differences between basic and safely managed services, presenting data that show&#xa;                         persistent inequalities between urban and rural areas. The chapter also highlights the&#xa;                         economic and social benefits of investing in WASH, emphasizing that universal access is &#xa;                         vital for achieving health and development goals worldwide."/>
+            <Property name="text" type="java.lang.String" value="World Health Organization, 2023 highlights the global challenges related to access to safe water and sanitation.&#xa;&#xa;According to the study, around 2.2 billion people lack safely managed drinking water, and 3.5 billion people lack safely managed sanitation services.&#xa;&#xa;These conditions contribute significantly to diseases such as diarrhea, respiratory infections, and neglected tropical diseases. The authors emphasize that progress towards universal access to safe water and sanitation is too slow to meet the 2030 Sustainable Development Goals, stressing the urgent need for investment and policy action to protect public health.&#xa;&#xa;&#xa;Author: Bruce Gordon&#xa;                         &#xa;   "/>
           </Properties>
         </Component>
       </SubComponents>
@@ -144,6 +161,29 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCloseActionPerformed"/>
       </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Published in Injury Prevention and Environmental Health (World Bank, 2017), provides&#xa;a comprehensive overview of global access to water, sanitation, and hygiene (WASH)&#xa;services. &#xa;&#xa;It discusses how improved WASH systems are essential for reducing disease,&#xa;enhancing quality of life, and promoting sustainable development. The authors explain &#xa;the differences between basic and safely managed services, presenting data that show&#xa;persistent inequalities between urban and rural areas. &#xa;&#xa;The chapter also highlights the&#xa;economic and social benefits of investing in WASH, emphasizing that universal access is &#xa;vital for achieving health and development goals worldwide.&#xa;&#xa; &#xa;&#xa;Author: Guy Hutton and Claire Chase"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Unsafe water, sanitation and hygiene: a persistent health burden"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Water Supply, Sanitation, and Hygiene"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

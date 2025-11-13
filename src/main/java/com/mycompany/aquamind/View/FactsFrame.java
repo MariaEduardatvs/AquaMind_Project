@@ -28,21 +28,63 @@ public class FactsFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        FactsBtn = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        exitBtnFacts = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        FactsBtn.setText("Facts");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("1-Only 2.5% of the Earth’s water is freshwater, and less than 1% is accessible in lakes and rivers.\n\n2- About 2.2 billion people worldwide lack access to safely managed drinking water.\n\n3-Unsafe water and poor sanitation contribute to diarrhea, cholera, typhoid, and other diseases, causing millions of deaths every year, mostly in children under 5.\n\n4- 3.5 billion people do not have safely managed sanitation services.\n\n5- Fixing leaks at home can save thousands of liters of water per year.\n\n6- Rainwater harvesting is an effective way to reduce dependence on groundwater and municipal water supply.\n\n7- Agriculture uses about 70% of global freshwater, making water-saving techniques like drip irrigation essential.\n\n8- Throwing trash into rivers or lakes pollutes drinking water and harms aquatic life.\n\n9- Shorter showers (5 minutes instead of 10) can save hundreds of liters of water per month.\n\n10-SDG 6 aims to ensure availability and sustainable management of water and sanitation for all by 2030.\n\n11- Water contamination is a leading factor in global disease outbreaks, especially in low-income countries.\\\n\n12- Conserving water not only saves water but also reduces energy consumption, because pumping, heating, and treating water uses energy.\n\n13- Education about hygiene and sanitation is as important as providing infrastructure—both are needed to improve public health.\n\n\n\n\n\n");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        exitBtnFacts.setText("Close");
+        exitBtnFacts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnFactsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(316, 316, 316)
+                        .addComponent(FactsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(exitBtnFacts, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 483, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FactsBtn)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(exitBtnFacts, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exitBtnFactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnFactsActionPerformed
+        this.dispose(); 
+    }//GEN-LAST:event_exitBtnFactsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +112,9 @@ public class FactsFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FactsBtn;
+    private javax.swing.JButton exitBtnFacts;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

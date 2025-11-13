@@ -4,21 +4,21 @@
  */
 package com.mycompany.aquamind.View;
 
-import com.mycompany.aquamind.View.EducationalAndQuizView.FactsFrame;
-import com.mycompany.aquamind.View.EducationalAndQuizView.QuizFrame;
+import com.mycompany.aquamind.View.FactsFrame;
+import com.mycompany.aquamind.View.QuizFrame;
 
 /**
  *
  * @author User
  */
-public class EducationalAndQuizView extends javax.swing.JFrame {
+public class EducationalAndQuizMAinUI extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EducationalAndQuizView.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EducationalAndQuizMAinUI.class.getName());
 
     /**
      * Creates new form EducationalAndQuizView
      */
-    public EducationalAndQuizView() {
+    public EducationalAndQuizMAinUI() {
         initComponents();
     }
 
@@ -39,7 +39,6 @@ public class EducationalAndQuizView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 483));
-        setPreferredSize(new java.awt.Dimension(400, 483));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
@@ -104,8 +103,7 @@ public class EducationalAndQuizView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQuizActionPerformed
 
     private void btnFactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactsActionPerformed
-
-        new FactsFrame().setVisible(true);
+       new FactsFrame().setVisible(true);
     }//GEN-LAST:event_btnFactsActionPerformed
 
     /**
@@ -130,7 +128,7 @@ public class EducationalAndQuizView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new EducationalAndQuizView().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new EducationalAndQuizMAinUI().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -141,23 +139,5 @@ public class EducationalAndQuizView extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
 
-    static class FactsFrame {
-
-        public FactsFrame() {
-        }
-
-        private void setVisible(boolean b) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-    }
-
-    static class QuizFrame {
-
-        public QuizFrame() {
-        }
-
-        private void setVisible(boolean b) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-    }
+    
 }

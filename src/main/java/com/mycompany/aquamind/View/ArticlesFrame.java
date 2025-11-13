@@ -17,32 +17,6 @@ public class ArticlesFrame extends javax.swing.JFrame {
      */
     public ArticlesFrame() {
         initComponents();
-        textArea.setText("""
-                         Title: Unsafe water, sanitation and hygiene: a persistent health burden
-                         
-                         Author: Bruce Gordon
-                         
-                         Text: World Health Organization, 2023 highlights the global challenges related
-                         to access to safe water and sanitation. According to the study, around 2.2 billion 
-                         people lack safely managed drinking water, and 3.5 billion people lack safely managed 
-                         sanitation services. These conditions contribute significantly to diseases such as diarrhea,
-                         respiratory infections, and neglected tropical diseases. The authors emphasize that progress 
-                         towards universal access to safe water and sanitation is too slow to meet the 2030 Sustainable Development Goals, 
-                         stressing the urgent need for investment and policy action to protect public health.
-                         
-                         Title: Water Supply, Sanitation, and Hygiene
-                         
-                         Author: Guy Hutton and Claire Chase
-                         
-                         Text: published in Injury Prevention and Environmental Health (World Bank, 2017), provides
-                         a comprehensive overview of global access to water, sanitation, and hygiene (WASH)
-                         services. It discusses how improved WASH systems are essential for reducing disease,
-                         enhancing quality of life, and promoting sustainable development. The authors explain 
-                         the differences between basic and safely managed services, presenting data that show
-                         persistent inequalities between urban and rural areas. The chapter also highlights the
-                         economic and social benefits of investing in WASH, emphasizing that universal access is 
-                         vital for achieving health and development goals worldwide.""");
-
     }
 
     /**
@@ -64,6 +38,10 @@ public class ArticlesFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
         btnClose = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -99,7 +77,7 @@ public class ArticlesFrame extends javax.swing.JFrame {
         textArea.setColumns(20);
         textArea.setLineWrap(true);
         textArea.setRows(5);
-        textArea.setText(" Title: Unsafe water, sanitation and hygiene: a persistent health burden\n                         \n                         Author: Bruce Gordon\n                         \n                         Text: World Health Organization, 2023 highlights the global challenges related\n                         to access to safe water and sanitation. According to the study, around 2.2 billion \n                         people lack safely managed drinking water, and 3.5 billion people lack safely managed \n                         sanitation services. These conditions contribute significantly to diseases such as diarrhea,\n                         respiratory infections, and neglected tropical diseases. The authors emphasize that progress \n                         towards universal access to safe water and sanitation is too slow to meet the 2030 Sustainable Development Goals, \n                         stressing the urgent need for investment and policy action to protect public health.\n                         \n                         Title: Water Supply, Sanitation, and Hygiene\n                         Author: Guy Hutton and Claire Chase\n                         Text: published in Injury Prevention and Environmental Health (World Bank, 2017), provides\n                         a comprehensive overview of global access to water, sanitation, and hygiene (WASH)\n                         services. It discusses how improved WASH systems are essential for reducing disease,\n                         enhancing quality of life, and promoting sustainable development. The authors explain \n                         the differences between basic and safely managed services, presenting data that show\n                         persistent inequalities between urban and rural areas. The chapter also highlights the\n                         economic and social benefits of investing in WASH, emphasizing that universal access is \n                         vital for achieving health and development goals worldwide.");
+        textArea.setText("World Health Organization, 2023 highlights the global challenges related to access to safe water and sanitation.\n\nAccording to the study, around 2.2 billion people lack safely managed drinking water, and 3.5 billion people lack safely managed sanitation services.\n\nThese conditions contribute significantly to diseases such as diarrhea, respiratory infections, and neglected tropical diseases. The authors emphasize that progress towards universal access to safe water and sanitation is too slow to meet the 2030 Sustainable Development Goals, stressing the urgent need for investment and policy action to protect public health.\n\n\nAuthor: Bruce Gordon\n                         \n   ");
         jScrollPane2.setViewportView(textArea);
 
         btnClose.setText("Close");
@@ -109,20 +87,37 @@ public class ArticlesFrame extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Published in Injury Prevention and Environmental Health (World Bank, 2017), provides\na comprehensive overview of global access to water, sanitation, and hygiene (WASH)\nservices. \n\nIt discusses how improved WASH systems are essential for reducing disease,\nenhancing quality of life, and promoting sustainable development. The authors explain \nthe differences between basic and safely managed services, presenting data that show\npersistent inequalities between urban and rural areas. \n\nThe chapter also highlights the\neconomic and social benefits of investing in WASH, emphasizing that universal access is \nvital for achieving health and development goals worldwide.\n\n \n\nAuthor: Guy Hutton and Claire Chase");
+        jScrollPane4.setViewportView(jTextArea1);
+
+        jLabel1.setText("Unsafe water, sanitation and hygiene: a persistent health burden");
+
+        jLabel3.setText("Water Supply, Sanitation, and Hygiene");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(181, 181, 181)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,9 +126,15 @@ public class ArticlesFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addGap(7, 7, 7)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -171,12 +172,16 @@ public class ArticlesFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables

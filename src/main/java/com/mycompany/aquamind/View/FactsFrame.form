@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,13 +23,70 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="316" max="-2" attributes="0"/>
+                      <Component id="FactsBtn" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="exitBtnFacts" min="-2" pref="67" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="655" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="483" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="FactsBtn" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                      <Component id="exitBtnFacts" min="-2" pref="16" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="473" max="-2" attributes="0"/>
+              <EmptySpace pref="27" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="FactsBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Facts"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="1-Only 2.5% of the Earth&#x2019;s water is freshwater, and less than 1% is accessible in lakes and rivers.&#xa;&#xa;2- About 2.2 billion people worldwide lack access to safely managed drinking water.&#xa;&#xa;3-Unsafe water and poor sanitation contribute to diarrhea, cholera, typhoid, and other diseases, causing millions of deaths every year, mostly in children under 5.&#xa;&#xa;4- 3.5 billion people do not have safely managed sanitation services.&#xa;&#xa;5- Fixing leaks at home can save thousands of liters of water per year.&#xa;&#xa;6- Rainwater harvesting is an effective way to reduce dependence on groundwater and municipal water supply.&#xa;&#xa;7- Agriculture uses about 70% of global freshwater, making water-saving techniques like drip irrigation essential.&#xa;&#xa;8- Throwing trash into rivers or lakes pollutes drinking water and harms aquatic life.&#xa;&#xa;9- Shorter showers (5 minutes instead of 10) can save hundreds of liters of water per month.&#xa;&#xa;10-SDG 6 aims to ensure availability and sustainable management of water and sanitation for all by 2030.&#xa;&#xa;11- Water contamination is a leading factor in global disease outbreaks, especially in low-income countries.\u005c&#xa;&#xa;12- Conserving water not only saves water but also reduces energy consumption, because pumping, heating, and treating water uses energy.&#xa;&#xa;13- Education about hygiene and sanitation is as important as providing infrastructure&#x2014;both are needed to improve public health.&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;" containsInvalidXMLChars="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="exitBtnFacts">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Close"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitBtnFactsActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>
