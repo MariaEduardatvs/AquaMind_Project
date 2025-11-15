@@ -11,14 +11,14 @@ import com.mycompany.aquamind.View.QuizFrame;
  *
  * @author User
  */
-public class EducationalAndQuizMAinUI extends javax.swing.JFrame {
+public class EducationalAndQuizMainUI extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EducationalAndQuizMAinUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EducationalAndQuizMainUI.class.getName());
 
     /**
      * Creates new form EducationalAndQuizView
      */
-    public EducationalAndQuizMAinUI() {
+    public EducationalAndQuizMainUI() {
         initComponents();
     }
 
@@ -41,7 +41,7 @@ public class EducationalAndQuizMAinUI extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(400, 483));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 483));
 
         btnArticles.setText("Articles");
@@ -128,7 +128,7 @@ public class EducationalAndQuizMAinUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new EducationalAndQuizMAinUI().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new EducationalAndQuizMainUI().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
