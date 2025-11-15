@@ -9,5 +9,13 @@ package com.mycompany.aquamind.tracker;
  * @author Kripa Shrestha
  */
 public class TrackerManager {
+    private WaterUseCalculator calculator = new WaterUseCalculator();
+    
+    public double calculateDailyUse(double shower, int laundry, double sink){
+        calculator.setShowerMinutes(shower);
+        calculator.setLaundryLoads(laundry);
+        calculator.setSinkMinutes(sink);
+        return calculator.calculateUse();
+    }
     
 }
