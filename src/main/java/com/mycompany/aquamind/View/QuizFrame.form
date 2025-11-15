@@ -69,6 +69,8 @@
     </Container>
     <Component class="javax.swing.JProgressBar" name="jProgressBar1">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup4">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -96,32 +98,21 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="canvas1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnConfirmation" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="jRadioButton4" min="-2" pref="98" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton3" min="-2" pref="98" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton2" min="-2" pref="98" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton1" min="-2" pref="98" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                          <Component id="btnConfirmation" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="jRadioButton4" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jRadioButton3" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jRadioButton2" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jRadioButton1" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="question2" alignment="0" min="-2" pref="410" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -154,14 +145,30 @@
                               <Component id="jRadioButton7" min="-2" pref="210" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                          <Component id="question1" alignment="0" min="-2" pref="231" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                      <Component id="question1" min="-2" pref="185" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="canvas1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel1" min="-2" pref="208" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="question2" alignment="0" max="32767" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -170,9 +177,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="exitBtn1" min="-2" pref="15" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="question2" min="-2" pref="37" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
@@ -190,15 +199,15 @@
               <Component id="exitBtn" min="-2" pref="17" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Component id="question1" min="-2" pref="37" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Component id="jButton3" min="-2" pref="23" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
@@ -212,6 +221,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="exitBtn">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Close"/>
       </Properties>
       <Events>
@@ -220,11 +232,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="question1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="What does WASH stand for?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnConfirmation">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="cc" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Check answer"/>
       </Properties>
       <Events>
@@ -233,6 +251,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton1">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="A) 50%"/>
       </Properties>
       <Events>
@@ -241,16 +262,25 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton2">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="B) 10%"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton3">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="C) 2.5%"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton4">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="D) 25%"/>
       </Properties>
     </Component>
@@ -260,6 +290,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="33" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Next "/>
       </Properties>
       <Events>
@@ -268,11 +301,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="question2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="What percentage of the Earth&apos;s water is freshwater suitable for drinking?"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="What percentage of the Earth&apos;s water is fresh water suitable for drinking?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton5">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="A) Water and Soil Health"/>
       </Properties>
       <Events>
@@ -281,6 +320,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton6">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="B) Water, Sanitation, and Hygiene"/>
       </Properties>
       <Events>
@@ -289,16 +331,25 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton7">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="C) Water and Sanitation Hub"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton8">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="D)Waste and Sanitation Health"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="33" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Next "/>
       </Properties>
       <Events>
@@ -307,6 +358,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="exitBtn1">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Close"/>
       </Properties>
       <Events>
@@ -315,11 +369,25 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="cc" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Check answer"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Impact" size="36" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="QUIZ"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

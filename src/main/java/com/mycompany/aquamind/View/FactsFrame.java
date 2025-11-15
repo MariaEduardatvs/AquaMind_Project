@@ -35,6 +35,8 @@ public class FactsFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        FactsBtn.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        FactsBtn.setForeground(new java.awt.Color(0, 204, 204));
         FactsBtn.setText("Facts");
 
         jTextArea1.setColumns(20);
@@ -42,6 +44,7 @@ public class FactsFrame extends javax.swing.JFrame {
         jTextArea1.setText("1-Only 2.5% of the Earth’s water is freshwater, and less than 1% is accessible in lakes and rivers.\n\n2- About 2.2 billion people worldwide lack access to safely managed drinking water.\n\n3-Unsafe water and poor sanitation contribute to diarrhea, cholera, typhoid, and other diseases, causing millions of deaths every year, mostly in children under 5.\n\n4- 3.5 billion people do not have safely managed sanitation services.\n\n5- Fixing leaks at home can save thousands of liters of water per year.\n\n6- Rainwater harvesting is an effective way to reduce dependence on groundwater and municipal water supply.\n\n7- Agriculture uses about 70% of global freshwater, making water-saving techniques like drip irrigation essential.\n\n8- Throwing trash into rivers or lakes pollutes drinking water and harms aquatic life.\n\n9- Shorter showers (5 minutes instead of 10) can save hundreds of liters of water per month.\n\n10-SDG 6 aims to ensure availability and sustainable management of water and sanitation for all by 2030.\n\n11- Water contamination is a leading factor in global disease outbreaks, especially in low-income countries.\\\n\n12- Conserving water not only saves water but also reduces energy consumption, because pumping, heating, and treating water uses energy.\n\n13- Education about hygiene and sanitation is as important as providing infrastructure—both are needed to improve public health.\n\n\n\n\n\n");
         jScrollPane1.setViewportView(jTextArea1);
 
+        exitBtnFacts.setForeground(new java.awt.Color(255, 0, 0));
         exitBtnFacts.setText("Close");
         exitBtnFacts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,9 +58,9 @@ public class FactsFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(316, 316, 316)
-                        .addComponent(FactsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FactsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exitBtnFacts, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -76,7 +79,7 @@ public class FactsFrame extends javax.swing.JFrame {
                         .addComponent(exitBtnFacts, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
