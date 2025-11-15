@@ -13,14 +13,14 @@ import com.mycompany.aquamind.Menu;
  *
  * @author Kripa Shrestha
  */
-public class TrackerUI extends javax.swing.JFrame {
+public class CalculatorUI extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TrackerUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculatorUI.class.getName());
 
     /**
      * Creates new form TrackerUI
      */
-    public TrackerUI() {
+    public CalculatorUI() {
         initComponents();
     }
 
@@ -33,6 +33,7 @@ public class TrackerUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -42,51 +43,39 @@ public class TrackerUI extends javax.swing.JFrame {
         btnCalculate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         lblResult = new javax.swing.JLabel();
-        cbTap = new javax.swing.JCheckBox();
-        cbShower = new javax.swing.JCheckBox();
-        cbLaundry = new javax.swing.JCheckBox();
-        btnSave = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        lblHabitTracker = new javax.swing.JLabel();
         lblWaterCalc = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
+        btnHabitTracker = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 30));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20), new java.awt.Dimension(32767, 20));
+        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel1.setText("Shower (mins)");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel2.setText("Laundry (loads)");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, 20));
 
-        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel3.setText("Sink (mins)");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, 20));
 
         txtShower.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        txtShower.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtShowerActionPerformed(evt);
-            }
-        });
         getContentPane().add(txtShower, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, 20));
 
         txtLaundry.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         getContentPane().add(txtLaundry, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, 20));
 
         txtSink.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        txtSink.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSinkActionPerformed(evt);
-            }
-        });
         getContentPane().add(txtSink, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, 20));
 
-        btnCalculate.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        btnCalculate.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         btnCalculate.setText("Calculate");
         btnCalculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +84,7 @@ public class TrackerUI extends javax.swing.JFrame {
         });
         getContentPane().add(btnCalculate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
 
-        btnReset.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        btnReset.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,56 +93,38 @@ public class TrackerUI extends javax.swing.JFrame {
         });
         getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
 
-        lblResult.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        lblResult.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         lblResult.setText("Estimated daily use: 0 L");
         getContentPane().add(lblResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
-        cbTap.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        cbTap.setText("Turn off tap while brushing");
-        getContentPane().add(cbTap, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, -1, -1));
+        lblWaterCalc.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        lblWaterCalc.setText("Water Usage Calculator");
+        getContentPane().add(lblWaterCalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
 
-        cbShower.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        cbShower.setText("Take shorther showers");
-        getContentPane().add(cbShower, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, -1, -1));
-
-        cbLaundry.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        cbLaundry.setText("Run full laundry loads");
-        getContentPane().add(cbLaundry, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, -1, -1));
-
-        btnSave.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        btnSave.setText("Save");
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
+        btnHabitTracker.setBackground(new java.awt.Color(0, 204, 153));
+        btnHabitTracker.setText("Habit Tracker");
+        btnHabitTracker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
+                btnHabitTrackerActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 530, -1, -1));
+        getContentPane().add(btnHabitTracker, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
 
-        btnBack.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        btnBack.setBackground(new java.awt.Color(153, 204, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 320, 450, -1));
-
-        lblHabitTracker.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        lblHabitTracker.setText("Habit Tracker");
-        getContentPane().add(lblHabitTracker, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
-
-        lblWaterCalc.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        lblWaterCalc.setText("Water Usage Calculator");
-        getContentPane().add(lblWaterCalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 440, 10));
+        getContentPane().add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 10, 50));
+        getContentPane().add(filler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, -1, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtShowerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtShowerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtShowerActionPerformed
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
         try{
@@ -171,14 +142,6 @@ public class TrackerUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCalculateActionPerformed
 
-    private void txtSinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSinkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSinkActionPerformed
-
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        JOptionPane.showMessageDialog(this, "Progress saved!");
-    }//GEN-LAST:event_btnSaveActionPerformed
-
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         txtShower.setText("");
         txtLaundry.setText("");
@@ -186,11 +149,17 @@ public class TrackerUI extends javax.swing.JFrame {
         lblResult.setText("Estimated daily use: 0 L");
     }//GEN-LAST:event_btnResetActionPerformed
 
+    private void btnHabitTrackerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHabitTrackerActionPerformed
+        new HabitUI().setVisible(true); //Opens Habit UI
+        this.dispose(); //Closes CalculatorUI
+    }//GEN-LAST:event_btnHabitTrackerActionPerformed
+
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        new Menu().setVisible(true);
-        this.dispose();
+        new Menu().setVisible(true); //Back to Menu
+        this.dispose(); //Closes CalculatorUI
     }//GEN-LAST:event_btnBackActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
@@ -213,23 +182,22 @@ public class TrackerUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new TrackerUI().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new CalculatorUI().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCalculate;
+    private javax.swing.JButton btnHabitTracker;
     private javax.swing.JButton btnReset;
-    private javax.swing.JButton btnSave;
-    private javax.swing.JCheckBox cbLaundry;
-    private javax.swing.JCheckBox cbShower;
-    private javax.swing.JCheckBox cbTap;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.Box.Filler filler3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblHabitTracker;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblResult;
     private javax.swing.JLabel lblWaterCalc;
     private javax.swing.JTextField txtLaundry;

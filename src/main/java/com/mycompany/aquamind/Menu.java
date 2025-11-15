@@ -5,6 +5,7 @@
 package com.mycompany.aquamind;
 
 import com.mycompany.aquamind.View.EducationalAndQuizMainUI;
+import com.mycompany.aquamind.tracker.CalculatorUI;
 
 /**
  *
@@ -31,7 +32,7 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnTrackerUI = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,10 +43,10 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("<- Tracking");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnTrackerUI.setText("<- Tracking");
+        btnTrackerUI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnTrackerUIActionPerformed(evt);
             }
         });
 
@@ -55,7 +56,7 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(jButton2)
+                .addComponent(btnTrackerUI)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(32, 32, 32))
@@ -66,7 +67,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(134, 134, 134)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnTrackerUI))
                 .addContainerGap(143, Short.MAX_VALUE))
         );
 
@@ -77,9 +78,9 @@ public class Menu extends javax.swing.JFrame {
         new EducationalAndQuizMainUI().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnTrackerUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrackerUIActionPerformed
+        new CalculatorUI().setVisible(true);
+    }//GEN-LAST:event_btnTrackerUIActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,7 +108,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnTrackerUI;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }
