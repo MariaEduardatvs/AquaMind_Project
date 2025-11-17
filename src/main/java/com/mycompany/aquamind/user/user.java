@@ -6,7 +6,15 @@
 /*
 Author Piotr Konkol
 */
+//Purpose of the file is to track the current user
+// this is to allow the app to call upon this to give appropriate responses
+/*
+what it should start to contain
+constructor
+getters + setters
 
+Admin user?
+*/
 
 package com.mycompany.aquamind.user;
 
