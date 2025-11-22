@@ -15,5 +15,26 @@ success (boolean)
 timestamp (String or LocalDateTime)
 */ 
 public class loginAttempts {
-    
+
+    private String username;
+    private boolean success;
+    private String timestamp;
+
+    public loginAttempts(String username, boolean success, String timestamp){
+        this.username = username;
+        this.success = success;
+        this.timestamp = timestamp;
+    }
+
+    public String getUsername(){
+        return username;
+    }
+
+    public boolean isSuccess(){
+        return success; 
+    }
+
+    public String getTimestamp(){
+        return timestamp;// also keep last success mb, so ill have to make sure it wont override and stuff.
+    }
 }

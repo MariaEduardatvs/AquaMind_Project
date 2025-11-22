@@ -28,7 +28,7 @@ public class AuthService {
     private user currentUser;  // store whoever is logged in
     public boolean login(String username, String password) {
     // no need for logic yet, will just always be correct i think
-        currentUser = new user(username, "placeholder@mail.ie", password);
+        currentUser = new user(username, "placeholder@mail.ie", password); // all of this is just placeholder/skeleton filler. no real logic behind any of this code yet
         return true;
     }
 
@@ -40,8 +40,9 @@ public class AuthService {
     }
 
     public void setGuest() {
-        System.out.println("AUTH SERVICE: setGuest() called");
-        currentUser = new user("Guest", "none", "none");
+        System.out.println("AUTH SERVICE: setGuest() called");// make it logged in the actual stats later for now just visible in console ( also just making sure to say where things are geting called from it'll look better in the end)
+        currentUser = new user("Guest", "none", "none"); // something like username is guest, password none, email none, for simplicity sake ill probably just make that
+                                                        // just another account like their actual username is Guest etc etc - and itll just autofill
     }
 
     public user getCurrentUser() {
