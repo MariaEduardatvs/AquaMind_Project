@@ -24,5 +24,5 @@ public abstract class EducationalContent {
         this.author = author;
     }
 
-    public abstract void displayContent();
+    public abstract void displayContent(); //abstract method to display the content 
 }

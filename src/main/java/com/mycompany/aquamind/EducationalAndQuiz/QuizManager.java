@@ -4,15 +4,37 @@
  */
 package com.mycompany.aquamind.EducationalAndQuiz;
 
+import java.util.List;
+
 /**
  *
  * @author Maria Eduarda Tavares
- * manages everything in the educational and quiz section.
- * Stores all EducationalContent objects in a list.
- * Displays all content (showAllContent()).
- * Starts the quiz (startQuiz()).
- * 
+ * Responsible for managing the quiz system.
+ * * Allows adding questions and answer options.
+ * Starts the quiz and provides access to the final score.
  */
 public class QuizManager {
+    private Quiz quiz;
+    
+    public QuizManager(){
+    quiz=new Quiz(0,0); //creates the quiz with score 0
+    }
+    
+    public void addQuestion(String question, String[] options, int correctIndex){
+    quiz.addQuestion(question, options, correctIndex); //to add questions
+    }
+    
+    public void startQuiz(){
+    System.out.println("starting quiz");
+    quiz.start(); //starting quiz
+    }
+    
+    public int getFinalScore(){
+    return quiz.getScore(); //show the score
+    }
+    }
    
-}
+   
+   
+   
+

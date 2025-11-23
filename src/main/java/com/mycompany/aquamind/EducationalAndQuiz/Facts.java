@@ -6,7 +6,8 @@ package com.mycompany.aquamind.EducationalAndQuiz;
 
 /**
  *
- * @author Maria Eduarda Tavares Represents a short fact about water.
+ * @author Maria Eduarda Tavares 
+ * Represents short facts about water.
  */
 public class Facts extends EducationalContent {
 

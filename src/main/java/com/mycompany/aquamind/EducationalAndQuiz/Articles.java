@@ -6,7 +6,8 @@ package com.mycompany.aquamind.EducationalAndQuiz;
 
 /**
  *
- * @author Maria Eduarda Tavares Represents a article about water conservation.
+ * @author Maria Eduarda Tavares 
+ * Represents articles about water conservation.
  *
  */
 public class Articles extends EducationalContent {
@@ -17,7 +18,7 @@ public class Articles extends EducationalContent {
 
     @Override
     public void displayContent() {
-        System.out.println("=== Article ===");
+        System.out.println("Article");
         System.out.println("Title: " + title);
         System.out.println("Text: " + text);
         System.out.println();
