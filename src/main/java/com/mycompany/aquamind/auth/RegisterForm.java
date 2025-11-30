@@ -157,7 +157,8 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameFieldActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
+    new AuthUi().setVisible(true);  // open main menu
+    this.dispose();                 // close this window
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
