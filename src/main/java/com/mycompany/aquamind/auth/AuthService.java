@@ -2,25 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-/*
-Author Piotr Konkol
-*/
-// This is going to be the main "application class" for the auth section
-/*
-createAccount
-login
-passwordHash
-userExistence : bool
-loadUser
-searchUser(String username)
-deleteUser(String username)
-displayAllUsers()
-addAttempt(LoginAttempt x)
-displayAllAttempts()
-searchAttempts(String username)
-*/ 
-// just an early prototype to fit Checkpt 2
+/**
+ *
+ * author: Piotr Konkol
+ * date last updated: November 2025
+ */
+
 package com.mycompany.aquamind.auth;
+
 import com.mycompany.aquamind.user.user;
 import java.io.*;
 import java.util.ArrayList;
@@ -82,7 +71,6 @@ public class AuthService {
         users.add(newUser);
         saveUsers();         // write to file  
         currentUser = newUser;
-
         return true;
     }
 
@@ -100,6 +88,10 @@ public class AuthService {
     // guest login
     public void setGuest() {
         currentUser = new user("Guest", "none", "none");
+    }
+    
+    public void setCurrentUser(user u) {
+        this.currentUser = u;
     }
 
     public user getCurrentUser() {

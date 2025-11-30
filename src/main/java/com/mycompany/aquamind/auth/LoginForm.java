@@ -10,14 +10,12 @@
 
 package com.mycompany.aquamind.auth;
 
-import com.mycompany.aquamind.auth.AuthService;
 import com.mycompany.aquamind.Menu;
 import javax.swing.JOptionPane;
 
 
 public class LoginForm extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginForm.class.getName());
     private AuthService auth = new AuthService();
 
     /**

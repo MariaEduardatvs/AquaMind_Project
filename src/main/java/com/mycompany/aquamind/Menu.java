@@ -2,16 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+/**
+ *
+ * author: Piotr Konkol
+ * date last updated: November 2025
+ */
+
 package com.mycompany.aquamind;
 
 import com.mycompany.aquamind.View.EducationalAndQuizMainUI;
 import com.mycompany.aquamind.tracker.CalculatorUI;
 import com.mycompany.aquamind.user.user;
 
-/**
- *
- * @author Konko
- */
 public class Menu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());

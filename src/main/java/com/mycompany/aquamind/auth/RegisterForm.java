@@ -10,8 +10,8 @@
 
 package com.mycompany.aquamind.auth;
 
+import com.mycompany.aquamind.user.user;
 import com.mycompany.aquamind.Menu;
-import com.mycompany.aquamind.auth.AuthService;
 import javax.swing.JOptionPane;
 
 public class RegisterForm extends javax.swing.JFrame {
@@ -167,19 +167,21 @@ public class RegisterForm extends javax.swing.JFrame {
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
     String username = usernameField.getText();
     String email = emailField.getText();
-    String pass1 = new String(passwordField.getPassword());
+    String password = new String(passwordField.getPassword());
 
     AuthService auth = new AuthService();
-    boolean success = auth.register(username, pass1, email);
+    boolean success = auth.register(username, password, email);
 
     if (success) {
-        JOptionPane.showMessageDialog(this, "Account created");
-        new Menu().setVisible(true);
+        user newUser = new user(username, email, password);
+        auth.setCurrentUser(newUser);
+
+        Menu m = new Menu(newUser);
+        m.setVisible(true);
         this.dispose();
     } else {
-        JOptionPane.showMessageDialog(this, "Registration failed.");
+    JOptionPane.showMessageDialog(this, "Registration failed.");
     }
-
 
     }//GEN-LAST:event_OKButtonActionPerformed
 
