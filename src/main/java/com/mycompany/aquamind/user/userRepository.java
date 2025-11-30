@@ -92,5 +92,13 @@ public class userRepository {
     public ArrayList<user> getAllUsers() {
         return users;
     }
+    // wipes the users file
+    public void wipeFile() {
+    try{
+        new PrintWriter("users.csv").close();//overwrites file then writes nothing which should empty the csv
+    } catch (IOException e) {
+        System.out.println("Error clearing users.csv");
+        }
+    }
 }
 
