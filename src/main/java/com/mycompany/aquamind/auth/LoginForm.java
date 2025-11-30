@@ -2,15 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.aquamind.auth;
-
 /**
  *
- * @author Konko
+ * author: Piotr Konkol
+ * date last updated: November 2025
  */
+
+package com.mycompany.aquamind.auth;
+
+import com.mycompany.aquamind.Menu;
+import javax.swing.JOptionPane;
+
+
 public class LoginForm extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginForm.class.getName());
+    private AuthService auth = new AuthService();
 
     /**
      * Creates new form LoginForm
@@ -140,7 +146,23 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
-        // TODO add your handling code here:
+    String username = usernameField.getText();
+    String password = passwordField.getText();
+
+    boolean success = auth.login(username, password);
+
+    if (success) {
+        JOptionPane.showMessageDialog(this, "Login successful!");
+
+        Menu menu = new Menu(auth.getCurrentUser()); // move user to menu
+        menu.setVisible(true);
+        this.dispose();
+
+    } else {
+        JOptionPane.showMessageDialog(this, "Incorrect username or password.");
+    }
+
+
     }//GEN-LAST:event_OKButtonActionPerformed
 
 

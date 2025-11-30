@@ -2,16 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.aquamind.auth;
-import com.mycompany.aquamind.Menu;
-import com.mycompany.aquamind.auth.AuthService;
-import javax.swing.JOptionPane;
-
-
 /**
  *
- * @author Konko
+ * author: Piotr Konkol
+ * date last updated: November 2025
  */
+
+package com.mycompany.aquamind.auth;
+
+import com.mycompany.aquamind.user.user;
+import com.mycompany.aquamind.Menu;
+import javax.swing.JOptionPane;
+
 public class RegisterForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegisterForm.class.getName());
@@ -155,7 +157,8 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameFieldActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
+    new AuthUi().setVisible(true);  // open main menu
+    this.dispose();                 // close this window
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
@@ -165,19 +168,21 @@ public class RegisterForm extends javax.swing.JFrame {
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
     String username = usernameField.getText();
     String email = emailField.getText();
-    String pass1 = new String(passwordField.getPassword());
+    String password = new String(passwordField.getPassword());
 
     AuthService auth = new AuthService();
-    boolean success = auth.register(username, pass1, email);
+    boolean success = auth.register(username, password, email);
 
     if (success) {
-        JOptionPane.showMessageDialog(this, "Account created!");
-        new Menu().setVisible(true);
+        user newUser = new user(username, email, password);
+        auth.setCurrentUser(newUser);
+
+        Menu m = new Menu(newUser);
+        m.setVisible(true);
         this.dispose();
     } else {
-        JOptionPane.showMessageDialog(this, "Registration failed.");
+    JOptionPane.showMessageDialog(this, "Registration failed.");
     }
-
 
     }//GEN-LAST:event_OKButtonActionPerformed
 

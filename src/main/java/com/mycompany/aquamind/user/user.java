@@ -2,45 +2,39 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
-/*
-Author Piotr Konkol
-*/
-//Purpose of the file is to track the current user
-// this is to allow the app to call upon this to give appropriate responses
-/*
-what it should start to contain
-constructor
-getters + setters
-
-Admin user?
-*/
+/**
+ *
+ * author: Piotr Konkol
+ * date last updated: November 2025
+ */
 
 package com.mycompany.aquamind.user;
 
 public class user {
-    private String username;
-    private String passwordHash;  // this is going to be hashed by authService as to not keep a plain text file user details; this will then load it and will be able
-                                   // to return it to the calling class such as AuthService.
-    private String email;
 
-    public user(String username, String passwordHash, String email) {
+    private String username;
+    private String email;
+    private String password;
+
+    public user(String username, String email, String password) {
         this.username = username;
-        this.passwordHash = passwordHash;
         this.email = email;
+        this.password = password;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
     public String getEmail() {
         return email;
     }
 
+    public String getPassword() {
+        return password; 
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
