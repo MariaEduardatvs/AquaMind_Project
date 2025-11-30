@@ -8,8 +8,8 @@ import com.mycompany.aquamind.Menu;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Admin
+ * Habit UI
+ * @author Kripa Shrestha
  */
 public class HabitUI extends javax.swing.JFrame {
     
@@ -42,17 +42,13 @@ public class HabitUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 255));
 
-        cbTap.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         cbTap.setText("Turn off tap while brushing");
 
-        cbShower.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         cbShower.setText("Take shorter showers");
 
-        cbLaundry.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         cbLaundry.setText("Run full laundry loads");
 
         btnSave.setBackground(new java.awt.Color(102, 255, 204));
-        btnSave.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +57,6 @@ public class HabitUI extends javax.swing.JFrame {
         });
 
         btnBack.setBackground(new java.awt.Color(204, 204, 255));
-        btnBack.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +64,8 @@ public class HabitUI extends javax.swing.JFrame {
             }
         });
 
-        lblHabitTracker.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        lblHabitTracker.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        lblHabitTracker.setForeground(new java.awt.Color(0, 204, 204));
         lblHabitTracker.setText("Habit Tracker");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,8 +119,26 @@ public class HabitUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Save Button Action
+     *  
+     */
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        JOptionPane.showMessageDialog(this, "Progress saved!");
+        StringBuilder message = new StringBuilder("Progress Saved:\n");
+        
+        if (cbShower.isSelected()){
+            message.append("Took a shorter shower\n");
+        }
+        if (cbLaundry.isSelected()){
+            message.append("Used full laundry load\n");
+        }
+        if (cbTap.isSelected()){
+            message.append("Turned of tap while brushing teeth\n");
+        }
+        if (!cbShower.isSelected() && !cbLaundry.isSelected() && !cbTap.isSelected()){
+            message.append("No habits selected.");
+        }
+        JOptionPane.showMessageDialog(this, message.toString());
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -133,7 +147,7 @@ public class HabitUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     /**
-     * @param args the command line arguments
+     * Main Method for testing UI
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

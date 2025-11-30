@@ -34,12 +34,12 @@ public class CalculatorUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtShower = new javax.swing.JTextField();
         txtLaundry = new javax.swing.JTextField();
         txtSink = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         btnCalculate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         lblResult = new javax.swing.JLabel();
@@ -53,29 +53,19 @@ public class CalculatorUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(txtShower, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 100, 20));
+        getContentPane().add(txtLaundry, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 100, 20));
+        getContentPane().add(txtSink, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 100, 20));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel1.setText("Shower (mins)");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel2.setText("Laundry (loads)");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, 20));
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel3.setText("Sink (mins)");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, 20));
 
-        txtShower.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        getContentPane().add(txtShower, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, 20));
-
-        txtLaundry.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        getContentPane().add(txtLaundry, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, 20));
-
-        txtSink.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        getContentPane().add(txtSink, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, 20));
-
-        btnCalculate.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         btnCalculate.setText("Calculate");
         btnCalculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +74,6 @@ public class CalculatorUI extends javax.swing.JFrame {
         });
         getContentPane().add(btnCalculate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
 
-        btnReset.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,11 +82,11 @@ public class CalculatorUI extends javax.swing.JFrame {
         });
         getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
 
-        lblResult.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         lblResult.setText("Estimated daily use: 0 L");
         getContentPane().add(lblResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
-        lblWaterCalc.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        lblWaterCalc.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        lblWaterCalc.setForeground(new java.awt.Color(51, 204, 255));
         lblWaterCalc.setText("Water Usage Calculator");
         getContentPane().add(lblWaterCalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
@@ -137,7 +126,10 @@ public class CalculatorUI extends javax.swing.JFrame {
             
             lblResult.setText("Estimated daily use:" +result+ " L");
         }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "Please enter vaild numbers!");
+            JOptionPane.showMessageDialog(this, 
+                    "Please enter vaild numbers!",
+                    "Input Error",
+                    JOptionPane.ERROR_MESSAGE);
             
         }
     }//GEN-LAST:event_btnCalculateActionPerformed
@@ -161,7 +153,7 @@ public class CalculatorUI extends javax.swing.JFrame {
 
     
     /**
-     * @param args the command line arguments
+     * Main Method - Used for testing this screen individually
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
