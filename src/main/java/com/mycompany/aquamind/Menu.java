@@ -11,7 +11,7 @@
 package com.mycompany.aquamind;
 
 import com.mycompany.aquamind.View.EducationalAndQuizMainUI;
-import com.mycompany.aquamind.tracker.CalculatorUI;
+import com.mycompany.aquamind.tracker.TrackerForm;
 import com.mycompany.aquamind.user.user;
 
 public class Menu extends javax.swing.JFrame {
@@ -115,7 +115,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnTrackerUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrackerUIActionPerformed
-        new CalculatorUI().setVisible(true);
+        new TrackerForm().setVisible(true);
     }//GEN-LAST:event_btnTrackerUIActionPerformed
 
     /**

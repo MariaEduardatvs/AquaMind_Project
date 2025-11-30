@@ -5,6 +5,7 @@
 package com.mycompany.aquamind.tracker;
 
 import com.mycompany.aquamind.Menu;
+import com.mycompany.aquamind.auth.AuthUi;
 import javax.swing.JOptionPane;
 
 /**
@@ -35,9 +36,10 @@ public class HabitUI extends javax.swing.JFrame {
         cbShower = new javax.swing.JCheckBox();
         cbLaundry = new javax.swing.JCheckBox();
         btnSave = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
         lblHabitTracker = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        btnHome = new javax.swing.JButton();
+        btnBack2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 255));
@@ -56,64 +58,80 @@ public class HabitUI extends javax.swing.JFrame {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(204, 204, 255));
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
         lblHabitTracker.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         lblHabitTracker.setForeground(new java.awt.Color(0, 204, 204));
         lblHabitTracker.setText("Habit Tracker");
+
+        btnHome.setBackground(new java.awt.Color(0, 204, 153));
+        btnHome.setText("Home");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+
+        btnBack2.setBackground(new java.awt.Color(153, 204, 255));
+        btnBack2.setText("Back");
+        btnBack2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBack2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(202, Short.MAX_VALUE)
-                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(198, 198, 198))
+                .addContainerGap(122, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(111, 111, 111)
+                        .addComponent(btnHome)
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbTap)
+                            .addComponent(cbShower)
+                            .addComponent(cbLaundry)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(lblHabitTracker)))
+                        .addGap(112, 112, 112))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(btnSave)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(cbTap)
-                        .addComponent(cbShower)
-                        .addComponent(cbLaundry)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblHabitTracker)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnSave)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnBack)))))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(16, 16, 16)
+                    .addComponent(btnBack2)
+                    .addContainerGap(312, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(275, Short.MAX_VALUE)
-                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(lblHabitTracker)
+                .addGap(31, 31, 31)
+                .addComponent(cbTap)
+                .addGap(21, 21, 21)
+                .addComponent(cbShower)
+                .addGap(21, 21, 21)
+                .addComponent(cbLaundry)
+                .addGap(18, 18, 18)
+                .addComponent(btnSave)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnHome)
+                    .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(lblHabitTracker)
-                    .addGap(31, 31, 31)
-                    .addComponent(cbTap)
-                    .addGap(21, 21, 21)
-                    .addComponent(cbShower)
-                    .addGap(21, 21, 21)
-                    .addComponent(cbLaundry)
-                    .addGap(31, 31, 31)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnSave)
-                        .addComponent(btnBack))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(261, Short.MAX_VALUE)
+                    .addComponent(btnBack2)
+                    .addGap(16, 16, 16)))
         );
 
         pack();
@@ -141,10 +159,15 @@ public class HabitUI extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, message.toString());
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        new AuthUi().setVisible(true); //Opens Auth UI
+        this.dispose(); //Closes CalculatorUI
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed
         new Menu().setVisible(true); //Back to Menu
-        this.dispose(); //Closes Habit UI
-    }//GEN-LAST:event_btnBackActionPerformed
+        this.dispose(); //Closes HabitUI
+    }//GEN-LAST:event_btnBack2ActionPerformed
 
     /**
      * Main Method for testing UI
@@ -172,7 +195,8 @@ public class HabitUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnBack2;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnSave;
     private javax.swing.JCheckBox cbLaundry;
     private javax.swing.JCheckBox cbShower;

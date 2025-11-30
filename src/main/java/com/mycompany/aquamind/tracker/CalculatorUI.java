@@ -7,6 +7,7 @@ package com.mycompany.aquamind.tracker;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import com.mycompany.aquamind.AquaMindApp;
+import com.mycompany.aquamind.auth.AuthUi;
 import com.mycompany.aquamind.Menu;
 
 /**
@@ -45,8 +46,8 @@ public class CalculatorUI extends javax.swing.JFrame {
         lblResult = new javax.swing.JLabel();
         lblWaterCalc = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        btnHabitTracker = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
+        javax.swing.JButton btnBack = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 30));
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20), new java.awt.Dimension(32767, 20));
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
@@ -91,14 +92,14 @@ public class CalculatorUI extends javax.swing.JFrame {
         getContentPane().add(lblWaterCalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
 
-        btnHabitTracker.setBackground(new java.awt.Color(0, 204, 153));
-        btnHabitTracker.setText("Habit Tracker");
-        btnHabitTracker.addActionListener(new java.awt.event.ActionListener() {
+        btnHome.setBackground(new java.awt.Color(0, 204, 153));
+        btnHome.setText("Home");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHabitTrackerActionPerformed(evt);
+                btnHomeActionPerformed(evt);
             }
         });
-        getContentPane().add(btnHabitTracker, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
 
         btnBack.setBackground(new java.awt.Color(153, 204, 255));
         btnBack.setText("Back");
@@ -141,19 +142,20 @@ public class CalculatorUI extends javax.swing.JFrame {
         lblResult.setText("Estimated daily use: 0 L");
     }//GEN-LAST:event_btnResetActionPerformed
 
-    private void btnHabitTrackerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHabitTrackerActionPerformed
-        new HabitUI().setVisible(true); //Opens Habit UI
-        this.dispose(); //Closes CalculatorUI
-    }//GEN-LAST:event_btnHabitTrackerActionPerformed
-
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         new Menu().setVisible(true); //Back to Menu
         this.dispose(); //Closes CalculatorUI
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        new AuthUi().setVisible(true); //Opens Auth UI
+        this.dispose(); //Closes CalculatorUI
+    }//GEN-LAST:event_btnHomeActionPerformed
+
     
     /**
      * Main Method - Used for testing this screen individually
+     * @param args
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -178,9 +180,8 @@ public class CalculatorUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCalculate;
-    private javax.swing.JButton btnHabitTracker;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnReset;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
