@@ -6,14 +6,15 @@ package com.mycompany.aquamind;
 
 /**
  *
- * @author Team Yellow
+ * author: Team Yellow
+ * date last updated: November 2025
  */
 
 public class AquaMindApp {
 
     public static void main(String[] args) {
-        Menu myMenu=new Menu();
-        myMenu.setVisible(true); 
+        com.mycompany.aquamind.auth.AuthUi authWindow = new com.mycompany.aquamind.auth.AuthUi();
+        authWindow.setVisible(true); 
     }
 }
 

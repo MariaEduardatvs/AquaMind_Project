@@ -19,28 +19,30 @@ Admin user?
 package com.mycompany.aquamind.user;
 
 public class user {
-    private String username;
-    private String passwordHash;  // this is going to be hashed by authService as to not keep a plain text file user details; this will then load it and will be able
-                                   // to return it to the calling class such as AuthService.
-    private String email;
 
-    public user(String username, String passwordHash, String email) {
+    private String username;
+    private String email;
+    private String password;
+
+    public user(String username, String email, String password) {
         this.username = username;
-        this.passwordHash = passwordHash;
         this.email = email;
+        this.password = password;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
     public String getEmail() {
         return email;
     }
 
+    public String getPassword() {
+        return password; 
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

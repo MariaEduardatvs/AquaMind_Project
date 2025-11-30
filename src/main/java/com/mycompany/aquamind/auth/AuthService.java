@@ -22,27 +22,84 @@ searchAttempts(String username)
 // just an early prototype to fit Checkpt 2
 package com.mycompany.aquamind.auth;
 import com.mycompany.aquamind.user.user;
+import java.io.*;
+import java.util.ArrayList;
 
 public class AuthService {
 
-    private user currentUser;  // store whoever is logged in
-    public boolean login(String username, String password) {
-    // no need for logic yet, will just always be correct i think
-        currentUser = new user(username, "placeholder@mail.ie", password); // all of this is just placeholder/skeleton filler. no real logic behind any of this code yet
+    private ArrayList<user> users = new ArrayList<>();
+    private user currentUser;
+
+    public AuthService() {
+        loadUsers();
+    }
+
+   //Goes into csv file so that the users are ready
+    private void loadUsers() {
+        File f = new File("users.csv");
+        if (!f.exists()) {
+            return; // no file yet, move out
+        }
+           //create the file
+        try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 3) {
+                    users.add(new user(parts[0], parts[1], parts[2]));
+                }
+            }
+            //exception handling - this will let us know what failed if it does
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //add user to file
+    private void saveUsers() { // buffered writer, better than filewriter (writes all at once)
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("users.csv"))) {
+            for (user u : users) {
+                bw.write(u.getUsername() + "," + u.getEmail() + "," + u.getPassword());
+                bw.newLine();
+            }
+            //exception handling - this will let us know what failed if it does
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+   //part of the saveUser process, checks the possibility of registering user
+    public boolean register(String username, String password, String email) {
+
+        // check if username exists already
+        for (user u : users) {
+            if (u.getUsername().equals(username)) {
+                return false; // username taken
+            }
+        }
+
+        user newUser = new user(username, email, password);
+        users.add(newUser);
+        saveUsers();         // write to file  
+        currentUser = newUser;
+
         return true;
     }
 
- 
-    public boolean register(String username, String password, String email) {
-        // Once again no logic is actually required yet
-        currentUser = new user(username, email, password);
-        return true; 
+    // using the info they gave us, check if username and password is correct
+    public boolean login(String username, String password) {
+        for (user u : users) {
+            if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
+                currentUser = u;
+                return true;
+            }
+        }
+        return false;
     }
 
+    // guest login
     public void setGuest() {
-        System.out.println("AUTH SERVICE: setGuest() called");// make it logged in the actual stats later for now just visible in console ( also just making sure to say where things are geting called from it'll look better in the end)
-        currentUser = new user("Guest", "none", "none"); // something like username is guest, password none, email none, for simplicity sake ill probably just make that
-                                                        // just another account like their actual username is Guest etc etc - and itll just autofill
+        currentUser = new user("Guest", "none", "none");
     }
 
     public user getCurrentUser() {
