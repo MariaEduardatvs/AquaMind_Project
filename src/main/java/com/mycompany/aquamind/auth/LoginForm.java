@@ -2,15 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+/**
+ *
+ * author: Piotr Konkol
+ * date last updated: November 2025
+ */
+
 package com.mycompany.aquamind.auth;
+
 import com.mycompany.aquamind.auth.AuthService;
 import com.mycompany.aquamind.Menu;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Konko
- */
+
 public class LoginForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginForm.class.getName());

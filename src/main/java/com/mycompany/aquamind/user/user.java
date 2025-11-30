@@ -2,19 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
-/*
-Author Piotr Konkol
-*/
-//Purpose of the file is to track the current user
-// this is to allow the app to call upon this to give appropriate responses
-/*
-what it should start to contain
-constructor
-getters + setters
-
-Admin user?
-*/
+/**
+ *
+ * author: Piotr Konkol
+ * date last updated: November 2025
+ */
 
 package com.mycompany.aquamind.user;
 
