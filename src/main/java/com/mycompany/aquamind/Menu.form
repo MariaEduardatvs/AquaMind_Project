@@ -28,23 +28,24 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="btnTrackerUI" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnTrackerUI" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <Component id="jButton1" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="welcomeLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="welcomeLabel" max="32767" attributes="0"/>
+                      <EmptySpace min="185" pref="185" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                      <Component id="label1" min="-2" max="-2" attributes="0"/>
+                      <Component id="label1" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
