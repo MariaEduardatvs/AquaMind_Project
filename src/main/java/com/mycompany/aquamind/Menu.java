@@ -14,6 +14,7 @@ import com.mycompany.aquamind.View.EducationalAndQuizMainUI;
 import com.mycompany.aquamind.tracker.TrackerForm;
 import com.mycompany.aquamind.user.user;
 import com.mycompany.aquamind.user.Profile;
+import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
     
@@ -130,8 +131,13 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
+    if (currentUser == null || currentUser.getUsername().equalsIgnoreCase("Guest")) {
+            JOptionPane.showMessageDialog(this,"Guest accounts cannot access profile.\nPlease register or log in.","Access Denied",JOptionPane.WARNING_MESSAGE);
+        return; 
+    }
+    // Open profile normally for real users
     new Profile(currentUser).setVisible(true);
-    this.dispose(); // close Menu window
+    this.dispose();
     }//GEN-LAST:event_profileActionPerformed
 
     private void btnTrackerUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrackerUIActionPerformed
