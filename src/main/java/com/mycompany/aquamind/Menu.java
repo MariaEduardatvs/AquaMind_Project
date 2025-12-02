@@ -13,6 +13,7 @@ package com.mycompany.aquamind;
 import com.mycompany.aquamind.View.EducationalAndQuizMainUI;
 import com.mycompany.aquamind.tracker.TrackerForm;
 import com.mycompany.aquamind.user.user;
+import com.mycompany.aquamind.user.Profile;
 
 public class Menu extends javax.swing.JFrame {
     
@@ -25,11 +26,13 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
     }
+    
     public Menu(user u) {
         this.currentUser = u;
         initComponents();
         welcomeLabel.setText("Welcome, " + u.getUsername() + "!");
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,20 +42,21 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        profile = new javax.swing.JButton();
         btnTrackerUI = new javax.swing.JButton();
         welcomeLabel = new javax.swing.JLabel();
         label1 = new java.awt.Label();
+        EduQuiz = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quiz.png"))); // NOI18N
-        jButton1.setText("EduQuiz");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        profile.setBackground(new java.awt.Color(178, 200, 203));
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/accountLogo.png"))); // NOI18N
+        profile.setText("Profile");
+        profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                profileActionPerformed(evt);
             }
         });
 
@@ -72,51 +76,71 @@ public class Menu extends javax.swing.JFrame {
         label1.setForeground(new java.awt.Color(0, 204, 204));
         label1.setText("AquaMind");
 
+        EduQuiz.setBackground(new java.awt.Color(153, 153, 255));
+        EduQuiz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quiz.png"))); // NOI18N
+        EduQuiz.setText("EduQuiz");
+        EduQuiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EduQuizActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(btnTrackerUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(58, 58, 58)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(43, 43, 43))
-            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTrackerUI, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EduQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(185, 185, 185))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(126, 126, 126))
+                        .addGap(8, 8, 8)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {EduQuiz, btnTrackerUI, profile});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(21, 21, 21)
                 .addComponent(welcomeLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTrackerUI))
-                .addGap(48, 48, 48))
+                .addGap(58, 58, 58)
+                .addComponent(btnTrackerUI, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(EduQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(profile)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {EduQuiz, btnTrackerUI, profile});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new EducationalAndQuizMainUI().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
+    new Profile(currentUser).setVisible(true);
+    this.dispose(); // close Menu window
+    }//GEN-LAST:event_profileActionPerformed
 
     private void btnTrackerUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrackerUIActionPerformed
         new TrackerForm().setVisible(true);
     }//GEN-LAST:event_btnTrackerUIActionPerformed
+
+    private void EduQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EduQuizActionPerformed
+        new EducationalAndQuizMainUI().setVisible(true);
+    }//GEN-LAST:event_EduQuizActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,9 +168,10 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EduQuiz;
     private javax.swing.JButton btnTrackerUI;
-    private javax.swing.JButton jButton1;
     private java.awt.Label label1;
+    private javax.swing.JButton profile;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 }
