@@ -57,6 +57,11 @@ public class QuizAdminFrame extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete Question.png"))); // NOI18N
         jMenu4.setText("Delete Question");
         jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Close.png"))); // NOI18N
@@ -93,6 +98,11 @@ public class QuizAdminFrame extends javax.swing.JFrame {
         new StartQuizFrame().setVisible(true); 
         this.dispose();
     }//GEN-LAST:event_jMenu9MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        new DeleteQuestionsFrame().setVisible(true);
+        
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments

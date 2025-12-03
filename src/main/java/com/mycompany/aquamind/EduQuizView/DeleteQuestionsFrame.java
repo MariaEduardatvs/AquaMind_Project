@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  *
  * @author User
  */
-public class DeteleQuestionsFrame extends javax.swing.JFrame {
+public class DeleteQuestionsFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DeteleQuestionsFrame.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DeleteQuestionsFrame.class.getName());
 
     /**
      * Creates new form DeteleQuestionsFrame
      */
-    public DeteleQuestionsFrame() {
+    public DeleteQuestionsFrame() {
         initComponents();
     }
 
@@ -134,7 +134,7 @@ public class DeteleQuestionsFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new DeteleQuestionsFrame().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new DeleteQuestionsFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
