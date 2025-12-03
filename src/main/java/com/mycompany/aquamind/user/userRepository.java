@@ -5,7 +5,7 @@
 /**
  *
  * author: Piotr Konkol
- * date last updated: November 2025
+ * date last updated: December 2025
  */
 
 package com.mycompany.aquamind.user;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class userRepository {
 
-    private ArrayList<user> users = new ArrayList<>();
+    private ArrayList<user> users = new ArrayList<>(); // Array list
 
    
     public userRepository() {
@@ -71,7 +71,7 @@ public class userRepository {
     }
     public boolean deleteUser(String username) {
     for (int i = 0; i < users.size(); i++) {
-        if (users.get(i).getUsername().equalsIgnoreCase(username)) {
+        if (users.get(i).getUsername().equals(username)) {
             users.remove(i); //remove the user
             saveAllUsersToFile(); // rewrite the csv
             return true;
@@ -80,7 +80,7 @@ public class userRepository {
     return false;
 }
     private void saveAllUsersToFile() {
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter("users.csv"))) {
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("users.csv"))) { // rewrite to the csv file
         for (user u : users) {
             bw.write(u.getUsername() + "," + u.getEmail() + "," + u.getPassword());
             bw.newLine();
@@ -109,10 +109,10 @@ public class userRepository {
     }
 
     // get all the users
-    public ArrayList<user> getAllUsers() {
+    public ArrayList<user> getAllUsers() {// array list utilisation
         return users;
     }
-    // wipes the users file
+    // wipes the users file (only admin can do it, to give function to the inheritance)
     public void wipeFile() {
     try{
         new PrintWriter("users.csv").close();//overwrites file then writes nothing which should empty the csv

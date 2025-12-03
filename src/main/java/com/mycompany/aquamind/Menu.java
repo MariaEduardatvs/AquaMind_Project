@@ -6,6 +6,7 @@
  *
  * author: Piotr Konkol
  * date last updated: November 2025
+ * This feature/function allows the user to traverse through sections, if guest the user cannot access profile
  */
 
 package com.mycompany.aquamind;

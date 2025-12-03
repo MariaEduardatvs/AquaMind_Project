@@ -2,13 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+/**
+ *
+ * author: Piotr Konkol
+ * date last updated: December 2025
+ * This form allows the user to create/log into/skip logging by going through guest mode
+ */
 package com.mycompany.aquamind.auth;
 import com.mycompany.aquamind.Menu;
 
-/**
- *
- * @author Konko
- */
 public class AuthUi extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AuthUi.class.getName());

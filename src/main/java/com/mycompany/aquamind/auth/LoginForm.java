@@ -5,7 +5,8 @@
 /**
  *
  * author: Piotr Konkol
- * date last updated: November 2025
+ * date last updated: December 2025
+ * This feature/function allows the user to log in
  */
 
 package com.mycompany.aquamind.auth;
