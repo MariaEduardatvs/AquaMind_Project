@@ -48,7 +48,6 @@ public class DeleteQuestionsFrame extends javax.swing.JFrame {
         DeleteLabel.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         DeleteLabel.setText("Delete question by ID");
 
-        IDfieldText.setText("Enter de ID");
         IDfieldText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IDfieldTextActionPerformed(evt);
