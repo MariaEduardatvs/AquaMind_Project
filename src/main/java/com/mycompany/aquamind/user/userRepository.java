@@ -69,6 +69,26 @@ public class userRepository {
         saveUserToFile(u);
         return true;
     }
+    public boolean deleteUser(String username) {
+    for (int i = 0; i < users.size(); i++) {
+        if (users.get(i).getUsername().equalsIgnoreCase(username)) {
+            users.remove(i); //remove the user
+            saveAllUsersToFile(); // rewrite the csv
+            return true;
+        }
+    }
+    return false;
+}
+    private void saveAllUsersToFile() {
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("users.csv"))) {
+        for (user u : users) {
+            bw.write(u.getUsername() + "," + u.getEmail() + "," + u.getPassword());
+            bw.newLine();
+        }
+    } catch (IOException e) {
+        System.out.println("Error saving all users!");
+    }
+}
 
     // find user, return user
     public user findUser(String username) {
