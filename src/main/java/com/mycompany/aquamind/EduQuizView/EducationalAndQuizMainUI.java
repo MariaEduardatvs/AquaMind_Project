@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.aquamind.View;
+package com.mycompany.aquamind.EduQuizView;
 
-import com.mycompany.aquamind.View.FactsFrame;
-import com.mycompany.aquamind.View.QuizFrame;
 
 /**
  *
- * @author User
+ * @author Maria Eduarda Tavares
  */
 public class EducationalAndQuizMainUI extends javax.swing.JFrame {
 
@@ -95,11 +93,11 @@ public class EducationalAndQuizMainUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnArticlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArticlesActionPerformed
-        new ArticlesFrame().setVisible(true);
+        new ArticleFrame().setVisible(true);
     }//GEN-LAST:event_btnArticlesActionPerformed
 
     private void btnQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuizActionPerformed
-        new QuizFrame().setVisible(true);
+        new StartQuizFrame().setVisible(true);
     }//GEN-LAST:event_btnQuizActionPerformed
 
     private void btnFactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactsActionPerformed

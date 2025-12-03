@@ -1,0 +1,17 @@
+
+ID: 2
+Question: Which habit best helps reduce water waste when brushing your teeth?
+Option 1: Leaving the tap running
+Option 2: Using a cup with ice
+Option 3: Turning off the tap while brushing
+Option 4: Brushing for less time
+Answer: Turning off the tap while brushing
+
+ID: 3
+Question: Which household item helps save water?
+Option 1: Hose without a nozzle
+Option 2: Leaking faucet
+Option 3: Drip irrigation system
+Option 4: Old washing machine
+Answer: Drip irrigation system
+
