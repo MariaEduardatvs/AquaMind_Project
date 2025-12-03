@@ -11,7 +11,7 @@
 
 package com.mycompany.aquamind;
 
-import com.mycompany.aquamind.View.EducationalAndQuizMainUI;
+import com.mycompany.aquamind.EduQuizView.EducationalAndQuizMainUI;
 import com.mycompany.aquamind.tracker.TrackerForm;
 import com.mycompany.aquamind.user.user;
 import com.mycompany.aquamind.user.Profile;

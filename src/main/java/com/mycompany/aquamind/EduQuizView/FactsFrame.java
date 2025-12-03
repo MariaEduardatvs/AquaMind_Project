@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.aquamind.View;
+package com.mycompany.aquamind.EduQuizView;
 
 /**
  *
- * @author User
+ * @author Maria Eduarda Tavares
  */
 public class FactsFrame extends javax.swing.JFrame {
     

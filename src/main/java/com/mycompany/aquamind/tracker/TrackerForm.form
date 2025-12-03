@@ -95,7 +95,6 @@
           <Color blue="bf" green="fc" red="fc" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Habit Tracker"/>
-        <Property name="actionCommand" type="java.lang.String" value="Habit Tracker"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="habitTrackerBtnActionPerformed"/>

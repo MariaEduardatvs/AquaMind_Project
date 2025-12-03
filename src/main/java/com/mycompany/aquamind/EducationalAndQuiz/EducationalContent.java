@@ -12,10 +12,10 @@ package com.mycompany.aquamind.EducationalAndQuiz;
  */
 public abstract class EducationalContent {
 
-    protected String title;
-    protected String text;
-    protected String source;
-    protected String author;
+    public String title;
+    public String text;
+    public String source;
+    public String author;
 
     public EducationalContent(String title, String text, String source, String author) {
         this.title = title;
@@ -25,4 +25,23 @@ public abstract class EducationalContent {
     }
 
     public abstract void displayContent(); //abstract method to display the content 
+    
+      public String getTitle() {
+        return title;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getSource() {
+        return source;
+    }
 }
+
+
+ 
