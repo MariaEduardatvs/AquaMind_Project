@@ -8,9 +8,6 @@ import com.mycompany.aquamind.Menu;
 import com.mycompany.aquamind.auth.AuthUi;
 import com.mycompany.aquamind.tracker.TrackerManager;
 import com.mycompany.aquamind.user.user;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,22 +16,17 @@ import javax.swing.JOptionPane;
  */
 public class HabitUI extends javax.swing.JFrame {
     private TrackerManager trackerManager;
-    private user currentUser;
+   
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(HabitUI.class.getName());
 
     /**
      * Creates new form HabitUI
      */
-    public HabitUI(user loggedInUser) {
-        this.currentUser = loggedInUser;
-        trackerManager = new TrackerManager(currentUser);
+    public HabitUI() {
         initComponents();
     }
 
-    private HabitUI() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,7 +48,6 @@ public class HabitUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 255));
-        setPreferredSize(new java.awt.Dimension(389, 500));
 
         cbTap.setText("Turn off tap while brushing");
 
@@ -96,12 +87,8 @@ public class HabitUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(btnSave)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(127, Short.MAX_VALUE)
+                .addContainerGap(122, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -109,32 +96,36 @@ public class HabitUI extends javax.swing.JFrame {
                         .addComponent(btnHome)
                         .addGap(15, 15, 15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblHabitTracker)
-                        .addGap(135, 135, 135))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbTap)
                             .addComponent(cbShower)
                             .addComponent(cbLaundry)
-                            .addComponent(cbTap))
-                        .addGap(114, 114, 114))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(lblHabitTracker)))
+                        .addGap(112, 112, 112))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(btnSave)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(16, 16, 16)
                     .addComponent(btnBack2)
-                    .addContainerGap(319, Short.MAX_VALUE)))
+                    .addContainerGap(312, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(lblHabitTracker)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(31, 31, 31)
                 .addComponent(cbTap)
                 .addGap(21, 21, 21)
                 .addComponent(cbShower)
                 .addGap(21, 21, 21)
                 .addComponent(cbLaundry)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnSave)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -143,7 +134,7 @@ public class HabitUI extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(281, Short.MAX_VALUE)
+                    .addContainerGap(261, Short.MAX_VALUE)
                     .addComponent(btnBack2)
                     .addGap(16, 16, 16)))
         );
@@ -155,38 +146,22 @@ public class HabitUI extends javax.swing.JFrame {
      * Save Button Action
      *  
      */
-    // Called from btnSaveActionPerformed
-    
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        ArrayList<Habit> habits = trackerManager.getHabits();
-
-    // Update habit completion based on checkboxes
-        for (Habit h : habits) {
-            switch (h.getName().toLowerCase()) {
-                case "turn off tap while brushing": 
-                    h.setCompleted(cbTap.isSelected());
-                    break;
-                case "take shorter showers": 
-                    h.setCompleted(cbShower.isSelected());
-                    break;
-                case "run full laundry loads": 
-                    h.setCompleted(cbLaundry.isSelected());
-                    break;
-            }
+       StringBuilder message = new StringBuilder("Progress Saved:\n");
+       
+        if (cbShower.isSelected()){
+            message.append("Took a shorter shower\n");
         }
-
-        // Save to CSV directly using BufferedWriter
-        String filename = "habits_" + currentUser.getUsername() + ".csv";
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
-            for (Habit h : habits) {
-                bw.write(h.getName() + "," + h.isCompleted());
-                bw.newLine();
-            }
-            JOptionPane.showMessageDialog(this, "Progress saved!");
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error saving habits: " + e.getMessage(), "Save Error", JOptionPane.ERROR_MESSAGE);
+        if (cbLaundry.isSelected()){
+            message.append("Used full laundry load\n");
         }
+        if (cbTap.isSelected()){
+            message.append("Turned of tap while brushing teeth\n");
+        }
+        if (!cbShower.isSelected() && !cbLaundry.isSelected() && !cbTap.isSelected()){
+            message.append("No habits selected.");
+        }
+        JOptionPane.showMessageDialog(this, message.toString());
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
@@ -221,7 +196,6 @@ public class HabitUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        user testUser = new user("TestUser", "test@example.com", "password123"); //dummy user for testing
         java.awt.EventQueue.invokeLater(() -> new HabitUI().setVisible(true));
     }
 

@@ -142,7 +142,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_profileActionPerformed
 
     private void btnTrackerUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrackerUIActionPerformed
-        new TrackerForm(currentUser).setVisible(true);
+        new TrackerForm().setVisible(true);
     }//GEN-LAST:event_btnTrackerUIActionPerformed
 
     private void EduQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EduQuizActionPerformed
