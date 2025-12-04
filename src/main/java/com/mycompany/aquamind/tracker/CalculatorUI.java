@@ -13,7 +13,7 @@ import com.mycompany.aquamind.tracker.TrackerManager;
 import com.mycompany.aquamind.user.user;
 
 /**
- * Calculator UI
+ *
  * @author Kripa Shrestha
  */
 public class CalculatorUI extends javax.swing.JFrame {
