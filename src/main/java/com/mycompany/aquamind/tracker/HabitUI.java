@@ -6,6 +6,8 @@ package com.mycompany.aquamind.tracker;
 
 import com.mycompany.aquamind.Menu;
 import com.mycompany.aquamind.auth.AuthUi;
+import com.mycompany.aquamind.tracker.TrackerManager;
+import com.mycompany.aquamind.user.user;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,14 +15,22 @@ import javax.swing.JOptionPane;
  * @author Kripa Shrestha
  */
 public class HabitUI extends javax.swing.JFrame {
+    private TrackerManager trackerManager;
+    private user currentUser;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(HabitUI.class.getName());
 
     /**
      * Creates new form HabitUI
      */
-    public HabitUI() {
+    public HabitUI(user loggedInUser) {
+        this.currentUser = loggedInUser;
+        trackerManager = new TrackerManager(currentUser);
         initComponents();
+    }
+
+    private HabitUI() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -142,26 +152,19 @@ public class HabitUI extends javax.swing.JFrame {
      *  
      */
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        StringBuilder message = new StringBuilder("Progress Saved:\n");
+       
         
-        if (cbShower.isSelected()){
-            message.append("Took a shorter shower\n");
-        }
-        if (cbLaundry.isSelected()){
-            message.append("Used full laundry load\n");
-        }
-        if (cbTap.isSelected()){
-            message.append("Turned of tap while brushing teeth\n");
-        }
-        if (!cbShower.isSelected() && !cbLaundry.isSelected() && !cbTap.isSelected()){
-            message.append("No habits selected.");
-        }
-        JOptionPane.showMessageDialog(this, message.toString());
+       trackerManager.markHabitComplete("Turn off tap while brushing");
+       trackerManager.markHabitComplete("Take shorter showers");
+       trackerManager.markHabitComplete("Run full laundry loads");
+       trackerManager.saveHabits();
+       
+       JOptionPane.showMessageDialog(this, "Progress saved!");
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         new AuthUi().setVisible(true); //Opens Auth UI
-        this.dispose(); //Closes CalculatorUI
+        this.dispose(); //Closes Habit UI
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed
@@ -191,6 +194,7 @@ public class HabitUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        user testUser = new user("TestUser", "test@example.com", "password123"); //dummy user for testing
         java.awt.EventQueue.invokeLater(() -> new HabitUI().setVisible(true));
     }
 

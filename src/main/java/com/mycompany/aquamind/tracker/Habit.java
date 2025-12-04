@@ -10,8 +10,7 @@ package com.mycompany.aquamind.tracker;
  */
 public class Habit {
     private String name;
-    private boolean completed;
-    boolean isCompleted;
+    boolean completed;
     
     //Constructor
     public Habit(String name, boolean completed){

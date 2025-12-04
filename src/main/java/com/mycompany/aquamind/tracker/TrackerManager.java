@@ -4,26 +4,39 @@
  */
 package com.mycompany.aquamind.tracker;
 
+import com.mycompany.aquamind.user.user;
 import java.util.ArrayList;
 /**
  * https://www.w3schools.com/java/java_arraylist.asp - used for ArrayList references
  * @author Kripa Shrestha
  */
 public class TrackerManager {
-    private WaterUseCalculator calculator = new WaterUseCalculator();
-    private final ArrayList<Habit> habits; //object used for water calculations
+    private WaterUseCalculator calculator;
+    private HabitRepository habitRepo;
+    
+    private user currentUser;
+    private ArrayList<Habit> habits;
     private double totalUsage; //Storing the latest water usage result
+   
     
     //Constructor to initialise the habit list and calculator
-    public TrackerManager(){
-        habits = new ArrayList<>();
-        calculator = new WaterUseCalculator();
-        totalUsage =0;
+    public TrackerManager(user loggedInUser){
+        this.currentUser = loggedInUser;
+        this.habitRepo = new HabitRepository();
+        this.calculator = new WaterUseCalculator();
+        
+        //Load the user specific habits from file
+        this.habits = habitRepo.loadHabits(currentUser);
+        this.totalUsage =0;
     }
     
-    //Adds a new Habit object to the list
+    /*
+    * Habit Management
+    */
+    
     public void addHabit(Habit h){
         habits.add(h);
+        habitRepo.saveHabits(currentUser, habits); //persist
     }
     
     //Finds and toggles the completion of a habit based on the name of the habit
@@ -31,10 +44,36 @@ public class TrackerManager {
         for(Habit h: habits){
             if(h.getName().equalsIgnoreCase(name)){
                 h.toggleCompleted();
+                habitRepo.saveHabits(currentUser, habits); //save update
                 return;
             }
         }
     }
+    
+    public void saveHabits() {
+    if (currentUser != null && habits != null) {
+        habitRepo.saveHabits(currentUser, habits);
+    }
+}
+    
+    public int getCompletedHabitCount(){
+        int count = 0;
+        for(Habit h : habits){
+            if (h.completed){
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    //Returns the list of habits which the UI uses to display the completed habits on the screen.
+    public ArrayList<Habit>getHabits(){
+        return habits;
+    }
+    
+    /*
+    *Water Use Calculation
+    */
     
     //Passes the user number input to WaterUSeCalculator and returns the total estimated water use for the day
     public double calculateDailyUse(double shower, int laundry, double sink){
@@ -46,19 +85,8 @@ public class TrackerManager {
         return totalUsage;
     }
     
-    public int getCompletedHabitCount(){
-        int count = 0;
-        for(Habit h : habits){
-            if (h.isCompleted){
-                count++;
-            }
-        }
-        return count;
-    }
-    
-    //Returns the list of habits which the UI uses to display the completed habits on the screen.
-    public ArrayList<Habit>getHabits(){
-        return habits;
+    public double getTotalUsage(){
+        return totalUsage;
     }
     
 }
