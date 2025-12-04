@@ -8,6 +8,9 @@ import com.mycompany.aquamind.Menu;
 import com.mycompany.aquamind.auth.AuthUi;
 import com.mycompany.aquamind.tracker.TrackerManager;
 import com.mycompany.aquamind.user.user;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -53,6 +56,7 @@ public class HabitUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 255));
+        setPreferredSize(new java.awt.Dimension(389, 500));
 
         cbTap.setText("Turn off tap while brushing");
 
@@ -92,8 +96,12 @@ public class HabitUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(btnSave)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(122, Short.MAX_VALUE)
+                .addContainerGap(127, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -101,36 +109,32 @@ public class HabitUI extends javax.swing.JFrame {
                         .addComponent(btnHome)
                         .addGap(15, 15, 15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblHabitTracker)
+                        .addGap(135, 135, 135))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbTap)
                             .addComponent(cbShower)
                             .addComponent(cbLaundry)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(lblHabitTracker)))
-                        .addGap(112, 112, 112))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(btnSave)
-                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(cbTap))
+                        .addGap(114, 114, 114))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(16, 16, 16)
                     .addComponent(btnBack2)
-                    .addContainerGap(312, Short.MAX_VALUE)))
+                    .addContainerGap(319, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
                 .addComponent(lblHabitTracker)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cbTap)
                 .addGap(21, 21, 21)
                 .addComponent(cbShower)
                 .addGap(21, 21, 21)
                 .addComponent(cbLaundry)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(btnSave)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -139,7 +143,7 @@ public class HabitUI extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(261, Short.MAX_VALUE)
+                    .addContainerGap(281, Short.MAX_VALUE)
                     .addComponent(btnBack2)
                     .addGap(16, 16, 16)))
         );
@@ -151,15 +155,38 @@ public class HabitUI extends javax.swing.JFrame {
      * Save Button Action
      *  
      */
+    // Called from btnSaveActionPerformed
+    
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-       
-        
-       trackerManager.markHabitComplete("Turn off tap while brushing");
-       trackerManager.markHabitComplete("Take shorter showers");
-       trackerManager.markHabitComplete("Run full laundry loads");
-       trackerManager.saveHabits();
-       
-       JOptionPane.showMessageDialog(this, "Progress saved!");
+        ArrayList<Habit> habits = trackerManager.getHabits();
+
+    // Update habit completion based on checkboxes
+        for (Habit h : habits) {
+            switch (h.getName().toLowerCase()) {
+                case "turn off tap while brushing": 
+                    h.setCompleted(cbTap.isSelected());
+                    break;
+                case "take shorter showers": 
+                    h.setCompleted(cbShower.isSelected());
+                    break;
+                case "run full laundry loads": 
+                    h.setCompleted(cbLaundry.isSelected());
+                    break;
+            }
+        }
+
+        // Save to CSV directly using BufferedWriter
+        String filename = "habits_" + currentUser.getUsername() + ".csv";
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
+            for (Habit h : habits) {
+                bw.write(h.getName() + "," + h.isCompleted());
+                bw.newLine();
+            }
+            JOptionPane.showMessageDialog(this, "Progress saved!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error saving habits: " + e.getMessage(), "Save Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed

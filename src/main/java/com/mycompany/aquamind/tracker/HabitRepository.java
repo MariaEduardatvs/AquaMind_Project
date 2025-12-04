@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import com.mycompany.aquamind.user.user;
 
 /**
- *
+ * Habit Repo
  * @author Kripa Shrestha
  */
 
@@ -32,7 +32,7 @@ public class HabitRepository {
                 }
             }
      } catch (FileNotFoundException e) {
-            // No habits yet → return empty list
+   
         } catch (IOException e) {
             System.out.println("Error reading " + filename);
         }
