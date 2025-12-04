@@ -5,13 +5,12 @@
 package com.mycompany.aquamind.tracker;
 
 /**
- *
+ * Habit class
  * @author Kripa Shrestha
  */
 public class Habit {
     private String name;
-    private boolean completed;
-    boolean isCompleted;
+    boolean completed;
     
     //Constructor
     public Habit(String name, boolean completed){
@@ -26,6 +25,10 @@ public class Habit {
     //return if true habit is completes, else false
     public boolean isCompleted(){
         return completed;
+    }
+    
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
     
     //Toggles the habit completion tick box

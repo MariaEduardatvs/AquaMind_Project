@@ -9,21 +9,25 @@ import javax.swing.*;
 import com.mycompany.aquamind.AquaMindApp;
 import com.mycompany.aquamind.auth.AuthUi;
 import com.mycompany.aquamind.Menu;
+import com.mycompany.aquamind.tracker.TrackerManager;
+import com.mycompany.aquamind.user.user;
 
 /**
- *
+ * Calculator UI
  * @author Kripa Shrestha
  */
 public class CalculatorUI extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculatorUI.class.getName());
-
+    private user currentUser;
     /**
      * Creates new form TrackerUI
      */
-    public CalculatorUI() {
+    public CalculatorUI(user loggedInUser) {
+        this.currentUser = loggedInUser;
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -122,7 +126,7 @@ public class CalculatorUI extends javax.swing.JFrame {
             int laundry = Integer.parseInt(txtLaundry.getText());
             double sink = Double.parseDouble(txtSink.getText());
             
-            TrackerManager manager = new TrackerManager();
+            TrackerManager manager = new TrackerManager(currentUser);
             double result = manager.calculateDailyUse(shower, laundry, sink);
             
             lblResult.setText("Estimated daily use:" +result+ " L");
@@ -176,7 +180,8 @@ public class CalculatorUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new CalculatorUI().setVisible(true));
+        user testUser =new user("TestUser", "test@example.com", "password123");
+        java.awt.EventQueue.invokeLater(() -> new CalculatorUI(testUser).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

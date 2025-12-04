@@ -6,6 +6,8 @@ package com.mycompany.aquamind.tracker;
 
 import com.mycompany.aquamind.Menu;
 import com.mycompany.aquamind.auth.AuthUi;
+import com.mycompany.aquamind.tracker.CalculatorUI;
+import com.mycompany.aquamind.user.user;
 
 /**
  *
@@ -14,11 +16,14 @@ import com.mycompany.aquamind.auth.AuthUi;
 public class TrackerForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TrackerForm.class.getName());
-
+    private user currentUser;
+    
     /**
      * Creates new form TrackerForm
+     * @param loggedInUser
      */
-    public TrackerForm() {
+    public TrackerForm(user loggedInUser) {
+        this.currentUser = loggedInUser;
         initComponents();
     }
 
@@ -122,12 +127,12 @@ public class TrackerForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void habitTrackerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_habitTrackerBtnActionPerformed
-        new HabitUI().setVisible(true); //Opens Habit UI
+        new HabitUI(currentUser).setVisible(true); //Opens Habit UI
         this.dispose(); //Closes TrackerForm
     }//GEN-LAST:event_habitTrackerBtnActionPerformed
 
     private void waterCalcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waterCalcBtnActionPerformed
-        new CalculatorUI().setVisible(true); //Opens Calculator UI
+        new CalculatorUI(currentUser).setVisible(true); //Opens Calculator UI
         this.dispose(); //Closes TrackerForm
     }//GEN-LAST:event_waterCalcBtnActionPerformed
 
@@ -163,7 +168,8 @@ public class TrackerForm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new TrackerForm().setVisible(true));
+        user testUser = new user("TestUser", "test@example.com", "password123"); //dummy user for testing
+        java.awt.EventQueue.invokeLater(() -> new TrackerForm(testUser).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
