@@ -16,22 +16,17 @@ import javax.swing.JOptionPane;
  */
 public class HabitUI extends javax.swing.JFrame {
     private TrackerManager trackerManager;
-    private user currentUser;
+   
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(HabitUI.class.getName());
 
     /**
      * Creates new form HabitUI
      */
-    public HabitUI(user loggedInUser) {
-        this.currentUser = loggedInUser;
-        trackerManager = new TrackerManager(currentUser);
+    public HabitUI() {
         initComponents();
     }
 
-    private HabitUI() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -152,14 +147,21 @@ public class HabitUI extends javax.swing.JFrame {
      *  
      */
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+       StringBuilder message = new StringBuilder("Progress Saved:\n");
        
-        
-       trackerManager.markHabitComplete("Turn off tap while brushing");
-       trackerManager.markHabitComplete("Take shorter showers");
-       trackerManager.markHabitComplete("Run full laundry loads");
-       trackerManager.saveHabits();
-       
-       JOptionPane.showMessageDialog(this, "Progress saved!");
+        if (cbShower.isSelected()){
+            message.append("Took a shorter shower\n");
+        }
+        if (cbLaundry.isSelected()){
+            message.append("Used full laundry load\n");
+        }
+        if (cbTap.isSelected()){
+            message.append("Turned of tap while brushing teeth\n");
+        }
+        if (!cbShower.isSelected() && !cbLaundry.isSelected() && !cbTap.isSelected()){
+            message.append("No habits selected.");
+        }
+        JOptionPane.showMessageDialog(this, message.toString());
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
@@ -194,7 +196,6 @@ public class HabitUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        user testUser = new user("TestUser", "test@example.com", "password123"); //dummy user for testing
         java.awt.EventQueue.invokeLater(() -> new HabitUI().setVisible(true));
     }
 
